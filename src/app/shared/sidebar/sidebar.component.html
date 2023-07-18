@@ -1,0 +1,92 @@
+<div>
+  <img
+    src="../../../assets/images/logo-meurh360-white.png"
+    alt=""
+    class="w-1/4 pb-11 cursor-pointer"
+    routerLink="/"
+  >
+  <h3 class="mb-6 text-lg font-bold text-white">Empresa</h3>
+  <div class="accordion">
+    <div class="accordion-item">
+      <input
+        type="checkbox"
+        id="accordion-item-1"
+        class="accordion-toggle"
+      >
+      <label
+        for="accordion-item-1"
+        class="accordion-title text-white"
+      >
+        <fa-icon
+          class="mr-4"
+          [icon]="faRulerCombined"
+        ></fa-icon>
+        Config. da empresa
+        <fa-icon [icon]="faCaretDown"></fa-icon>
+      </label>
+      <ul class="accordion-content text-white">
+        <li class="ml-4">Minha empresa</li>
+        <ng-container *ngIf="isRegistered">
+          <li class="ml-4">Beneficios</li>
+          <li class="ml-4">Áreas</li>
+          <li class="ml-4">Cargos</li>
+          <li class="ml-4">Filiais</li>
+        </ng-container>
+      </ul>
+    </div>
+
+    <div
+      class="accordion-item"
+      *ngIf="isRegistered"
+    >
+      <input
+        type="checkbox"
+        id="accordion-item-2"
+        class="accordion-toggle"
+      >
+      <label
+        for="accordion-item-2"
+        class="accordion-title text-white"
+      >
+        <fa-icon
+          class="mr-4"
+          [icon]="faWindowRestore"
+        ></fa-icon>
+        Config. do sistema
+        <fa-icon [icon]="faCaretDown"></fa-icon>
+      </label>
+      <ul class="accordion-content text-white">
+        <li class="ml-4">Informação adicional</li>
+      </ul>
+    </div>
+  </div>
+  <ng-container *ngIf="isRegistered">
+    <div class="mb-8">
+      <h3 class="mb-6 text-lg font-bold text-white">Vagas</h3>
+      <p class="text-white cursor-pointer">
+        <fa-icon
+          class="mr-4"
+          [icon]="faLocationDot"
+        ></fa-icon>
+        Config. do sistema
+      </p>
+    </div>
+    <div>
+      <h3 class="mb-6 text-lg font-bold text-white">Usuários</h3>
+      <p class="text-white cursor-pointer mb-3">
+        <fa-icon
+          class="mr-4"
+          [icon]="faIdCardClip"
+        ></fa-icon>
+        Neu Perfil
+      </p>
+      <p class="text-white cursor-pointer">
+        <fa-icon
+          class="mr-4"
+          [icon]="faUsers"
+        ></fa-icon>
+        Todos os Usuários
+      </p>
+    </div>
+  </ng-container>
+</div>

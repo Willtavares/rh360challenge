@@ -1,0 +1,250 @@
+<div class="flex h-screen">
+  <!-- sidebar -->
+  <div class="w-1/6 p-4 bg-[#0B2146]">
+    <app-sidebar></app-sidebar>
+  </div>
+
+  <!-- Conteúdo -->
+  <div class="w-5/6 ">
+    <!-- Header -->
+    <app-header></app-header>
+
+    <!-- Área de conteúdo -->
+    <div class="px-8 bg-gray-200 h-[93vh]">
+      <div class="py-6 px-3 flex flex-row justify-end">
+        <h4 class="text-gray-700 font-semibold pr-1 ">Configurações</h4><span class="text-gray-700 pr-1">/</span>
+        <h5 class="text-gray-700">Empresa</h5>
+      </div>
+      <div class="bg-white flex flex-col">
+        <h2 class="text-xl  mt-3 ml-3 font-semibold text-blue-900">Editar empresa</h2>
+        <hr class="my-8">
+        <form
+          [formGroup]="registrationForm"
+          (ngSubmit)="onSubmit()"
+        >
+          <div class="mx-4">
+            <div class="mb-4  w-1/6">
+              <label
+                class="block text-blue-800 text-sm font-bold mb-2"
+                for="companyType"
+              >
+                Tipo de empresa
+              </label>
+              <input
+                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
+                type="text"
+                id="companyType"
+                formControlName="companyType"
+              >
+            </div>
+          </div>
+          <div class="mx-4 flex justify-between">
+            <div class="mb-4 w-8/12">
+              <label
+                class="block text-blue-800 text-sm font-bold mb-2"
+                for="companyName"
+              >
+                Nome da empresa *
+              </label>
+              <input
+                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
+                type="text"
+                id="companyName"
+                formControlName="companyName"
+              >
+
+            </div>
+            <div class="mb-4 w-1/4">
+              <label
+                class="block text-blue-800 text-sm font-bold mb-2"
+                for="cnpj"
+              >
+                CNPJ da empresa *
+              </label>
+              <input
+                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
+                type="text"
+                id="cnpj"
+                formControlName="cnpj"
+                mask="00.000.000/0000-00"
+                pattern="[0-9]+$"
+              >
+            </div>
+          </div>
+          <div class="mx-4 flex justify-between flex-nowrap">
+            <div class="mb-4 w-28">
+              <label
+                class="block text-blue-800 text-sm font-bold mb-2"
+                for="cep"
+              >
+                CEP
+              </label>
+              <input
+                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
+                type="text"
+                id="cep"
+                formControlName="cep"
+                mask="00000-000"
+                pattern="[0-9]+$"
+              >
+            </div>
+            <div class="mb-4 w-1/5">
+              <label
+                class="block text-blue-800 text-sm font-bold mb-2"
+                for="address"
+              >
+                Endereço
+              </label>
+              <input
+                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
+                type="text"
+                id="address"
+                formControlName="address"
+              >
+            </div>
+            <div class="mb-4 w-1/12">
+              <label
+                class="block text-blue-800 text-sm font-bold mb-2"
+                for="neighborhood"
+              >
+                Bairro
+              </label>
+              <input
+                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
+                type="text"
+                id="neighborhood"
+                formControlName="neighborhood"
+              >
+            </div>
+            <div class="mb-4 w-[5rem]">
+              <div class="flex flex-wrap -ml-4">
+                <label
+                  class="block text-blue-800 text-sm font-bold mb-2"
+                  for="state"
+                >Estado</label>
+                <div class="relative border border-gray-400 rounded-md">
+                  <select
+                    class="bg-white text-gray-400 appearance-none border-0 inline-block py-2.5 pl-3 pr-8 rounded leading-tight focus:outline-none focus:border-blue-500"
+                    id="state"
+                    formControlName="state"
+                  >
+                    <option
+                      selected
+                      disabled
+                      value=""
+                    >Selecione</option>
+                    <option value="MG">MG</option>
+                    <option value="RJ">RJ</option>
+                    <option value="SP">SP</option>
+                  </select>
+                  <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-400">
+                    <fa-icon [icon]="faCaretDown"></fa-icon>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div class="mb-4 w-1/7">
+              <label
+                class="block text-blue-800 text-sm font-bold mb-2"
+                for="city"
+              >
+                Cidade
+              </label>
+              <input
+                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
+                type="text"
+                id="city"
+                formControlName="city"
+              >
+            </div>
+            <div class="mb-4 w-1/6">
+              <label
+                class="block text-blue-800 text-sm font-bold mb-2"
+                for="complement"
+              >
+                Complemento
+              </label>
+              <input
+                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
+                type="text"
+                id="complement"
+                formControlName="complement"
+              >
+            </div>
+          </div>
+          <div class="flex px-4 justify-between">
+            <div class="mb-4  w-1/5">
+              <label
+                class="block text-blue-800  text-sm font-bold mb-2"
+                for="cellphone"
+              >
+                Celular *
+              </label>
+              <input
+                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
+                type="text"
+                id="cellphone"
+                formControlName="cellphone"
+                mask="(00)0 0000-0000"
+              >
+            </div>
+            <div class="mb-4  w-1/4">
+              <label
+                class="block text-blue-800  text-sm font-bold mb-2"
+                for="moderator"
+              >
+                Nome do administrador *
+              </label>
+              <input
+                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
+                type="text"
+                id="moderator"
+                formControlName="moderator"
+              >
+            </div>
+            <div class="mb-4  w-1/6">
+              <label
+                class="block text-blue-800  text-sm font-bold mb-2"
+                for="cpf"
+              >
+                CPF
+              </label>
+              <input
+                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
+                type="text"
+                id="cpf"
+                formControlName="cpf"
+                mask="000.000.000-00"
+              >
+            </div>
+            <div class="mb-4 w-1/4">
+              <label
+                class="block text-blue-800  text-sm font-bold mb-2"
+                for="email"
+              >
+                E-mail *
+              </label>
+              <input
+                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
+                type="email"
+                id="email"
+                formControlName="email"
+              >
+            </div>
+          </div>
+
+          <hr class="my-8">
+          <div class="flex justify-end mb-8">
+            <button class="p-3 rounded-md text-gray-300 bg-gray-700">Cancelar</button>
+            <button
+              class=" mx-2 px-5 py-3 rounded-md text-white bg-blue-600"
+              [ngClass]="{'disabled-button': !registrationForm.valid}"
+              [disabled]="!registrationForm.valid"
+            >Salvar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

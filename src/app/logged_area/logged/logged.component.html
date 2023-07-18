@@ -1,0 +1,68 @@
+<div class="flex h-screen">
+  <div class="w-1/6 p-4 bg-[#0B2146]">
+    <app-sidebar></app-sidebar>
+    <!-- <img
+      src="../../../assets/images/logo-meurh360-white.png"
+      alt=""
+      class="w-1/4 pb-11"
+    >
+    <h3 class="mb-6 text-lg font-bold text-white">Empresa</h3>
+    <div class="accordion">
+      <div class="accordion-item">
+        <input
+          type="checkbox"
+          id="accordion-item-1"
+          class="accordion-toggle"
+        >
+        <label
+          for="accordion-item-1"
+          class="accordion-title text-white"
+        >
+          <fa-icon [icon]="faRulerCombined"></fa-icon>
+          Config. da empresa
+          <fa-icon [icon]="faCaretDown"></fa-icon>
+        </label>
+        <div class="accordion-content text-white">
+          <p>Minha empresa</p>
+        </div>
+      </div> -->
+
+    <!-- </div> -->
+
+  </div>
+
+  <!-- Conteúdo -->
+  <div class="w-5/6 ">
+    <!-- Espaço com um nome qualquer -->
+    <app-header></app-header>
+
+    <!-- Área de conteúdo -->
+    <div class="px-8 bg-gray-200 h-[93vh]">
+      <div class="py-6 px-3 flex flex-row justify-end">
+        <h4 class="text-gray-700 font-semibold pr-1 ">Configurações</h4><span class="text-gray-700 pr-1">/</span>
+        <h5 class="text-gray-700">Empresa</h5>
+      </div>
+      <div class="bg-white flex flex-row">
+        <div class="w-1/2 flex flex-col">
+          <div class="m-auto">
+            <h2 class="text-3xl font-bold text-gray-600">Olá, {{name}}. Seja bem vindo(a)</h2>
+            <p class="text-center py-6">É necessário configurar a empresa matriz para <br> visualizar todas as
+              informações do
+              sistema.</p>
+
+            <button
+              class="bg-blue-500 text-white rounded-md py-4 px-24 mx-6"
+              (click)="goToUrl()"
+            >Inciar a configuração</button>
+          </div>
+        </div>
+        <div class="w-1/2 flex flex-col ">
+          <img
+            src="../../../assets/images/coming-soon.svg"
+            alt=""
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

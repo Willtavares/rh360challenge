@@ -1,0 +1,106 @@
+<div
+  class="flex h-screen bg-[url('https://s1.1zoom.me/b4850/76/Closeup_Business_Hands_Handshake_519854_1366x768.jpg')] bg-opacity-75 bg-blur-xl bg-cover bg-center"
+>
+  <div class="m-auto p-2 col-auto w-[27rem] border-2 rounded-xl shadow-lg backdrop-blur-sm bg-white/60">
+    <img
+      src="../assets/images/logo-meurh360.png"
+      alt=""
+      class="w-max mb-16"
+    >
+    <h2 class="text-lg font-bold">Crie uma conta profissional</h2>
+    <h3 class="mb-7">Preencha seus dados para ter acesso</h3>
+    <form
+      [formGroup]="signupForm"
+      (ngSubmit)="onSubmit()"
+    >
+      <div class="mb-4">
+        <label
+          class="block text-gray-700 text-sm font-bold mb-2"
+          for="name"
+        >
+          Nome completo
+        </label>
+        <input
+          class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
+          type="text"
+          id="name"
+          placeholder="Digite seu nome completo"
+          formControlName="name"
+        >
+      </div>
+      <div class="mb-4">
+        <label
+          class="block text-gray-700 text-sm font-bold mb-2"
+          for="email"
+        >
+          E-mail
+        </label>
+        <input
+          class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
+          type="email"
+          id="email"
+          placeholder="Digite seu email cadastrado / ex email@gmail.com"
+          formControlName="email"
+        >
+      </div>
+
+      <div
+        class="mb-4"
+        [ngClass]="{ 'mismatch': signupForm.hasError('passwordMismatch') }"
+      >
+        <label
+          class="block text-gray-700 text-sm font-bold mb-2"
+          for="password"
+        >
+          Senha
+        </label>
+        <input
+          class="w-full px-3 py-2 border rounded-md focus:outline-none"
+          type="password"
+          id="password"
+          placeholder="Digite uma senha forte"
+          formControlName="password"
+        >
+      </div>
+      <div
+        class="mb-4"
+        [ngClass]="{ 'mismatch': signupForm.hasError('passwordMismatch') }"
+      >
+        <label
+          class="block text-gray-700 text-sm font-bold mb-2"
+          for="confirmPassword"
+        >
+          Confirmação de senha
+        </label>
+        <input
+          class="w-full px-3 py-2 border rounded-md focus:outline-none"
+          type="password"
+          id="confirmPassword"
+          placeholder="Repita a senha"
+          formControlName="confirmPassword"
+        >
+      </div>
+      <div class="flex flex-row mb-4">
+        <input
+          type="checkbox"
+          formControlName="terms"
+        >
+        <p class="ml-2 text-sm">Eu aceito os <a
+            href="#"
+            class="text-blue-600"
+          >termos de privacidade</a> e o <a
+            href="#"
+            class="text-blue-600"
+          >Contrato de serviço</a></p>
+      </div>
+      <div>
+        <button
+          class="w-full rounded p-2 bg-blue-600 text-white"
+          [ngClass]="{'disabled-button': !signupForm.valid}"
+          [disabled]="!signupForm.valid"
+        >Criar conta</button>
+      </div>
+    </form>
+
+  </div>
+</div>

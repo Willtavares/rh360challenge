@@ -1,0 +1,28 @@
+.accordion {
+  width: 100%;
+}
+
+.accordion-item {
+  margin-bottom: 1rem;
+}
+
+.accordion-toggle {
+  display: none;
+}
+
+.accordion-title {
+  cursor: pointer;
+}
+
+.accordion-content {
+  display: none;
+  padding: 0.5rem;
+}
+
+.accordion-toggle:checked + .accordion-title {
+  font-weight: bold;
+}
+
+.accordion-toggle:checked + .accordion-title + .accordion-content {
+  display: block;
+}
